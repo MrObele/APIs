@@ -1,0 +1,14 @@
+
+<% provide(:button_text, "Update kitten ") %>
+
+<div class="row" >
+   <div class="col-md-6 col-md-offset-3">
+   <h1>Add a kitten</h1>
+   <% if @kitten %>
+       <%= render 'form'%>
+       <p><%= link_to 'Delete', delete_kitten_path(id: @kitten.id), method: :delete, data: {confirm: "Are you sure you want to delete this kitten?"} %></p>
+      <% else %> 
+      <p>Kitten not found </p>
+      <% end %>
+   </div>
+</div>
